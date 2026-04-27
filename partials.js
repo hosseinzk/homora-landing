@@ -8,20 +8,31 @@ const NAV_HTML = `
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/images/logo-full.png" alt="Homora" /></a>
     <div class="nav-links">
+      <a href="/">Home</a>
       <div class="nav-dropdown">
-        <button class="nav-dropdown-trigger"><span data-i18n="nav.services">Services</span> <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
-        <div class="nav-dropdown-menu">
-          <a href="/services/home-cleaning.html"><span class="icon" style="background:#E8F5ED;">🏠</span> <span data-i18n="nav.svc.home">Home Cleaning</span></a>
-          <a href="/services/laundry.html"><span class="icon" style="background:#EBF3FF;">👕</span> <span data-i18n="nav.svc.laundry">Laundry & Ironing</span></a>
-          <a href="/services/carpet-cleaning.html"><span class="icon" style="background:#FEF3C7;">🧹</span> <span data-i18n="nav.svc.carpet">Carpet Cleaning</span></a>
-          <a href="/services/tailoring.html"><span class="icon" style="background:#FDE8F3;">🧵</span> <span data-i18n="nav.svc.tailoring">Sewing & Tailoring</span></a>
-          <a href="/services/handyman.html"><span class="icon" style="background:#EEF2FF;">🔧</span> <span data-i18n="nav.svc.handyman">Handyman</span></a>
+        <button class="nav-dropdown-trigger">Services <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <div class="nav-dropdown-menu" style="min-width:320px;">
+          <a href="/services/home-cleaning.html"><span class="icon" style="background:#E8F5ED;">🏠</span> Home Cleaning</a>
+          <a href="/services/laundry-ironing.html"><span class="icon" style="background:#EBF3FF;">👕</span> Laundry & Ironing</a>
+          <a href="/services/carpet-cleaning.html"><span class="icon" style="background:#FEF3C7;">🧹</span> Carpet cleaning</a>
+          <a href="/services/sewing-tailoring.html"><span class="icon" style="background:#FDE8F3;">🧵</span> Sewing & tailor</a>
+          <a href="/services/moving-service.html"><span class="icon" style="background:#EEF2FF;">📦</span> Moving Service</a>
+          <a href="/services/handyman.html"><span class="icon" style="background:#F0F9FF;">🔧</span> Handyman</a>
+          <a href="/services/move-out-cleaning-services.html"><span class="icon" style="background:#E8F5ED;">🏃</span> Move Out Cleaning</a>
+          <a href="/services/window-washing-for-businesses.html"><span class="icon" style="background:#EBF3FF;">🪟</span> Window Washing for Businesses</a>
         </div>
       </div>
-      <a href="/pricing.html" data-i18n="nav.pricing">Pricing</a>
-      <a href="/about.html" data-i18n="nav.about">About Us</a>
-      <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
-      <a href="/join-us.html" data-i18n="nav.join">Join Us</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/gift-cards.html">Gift card</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">About us <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="/who-we-are.html"><span class="icon" style="background:#E8F5ED;">📖</span> Our story</a>
+          <a href="/join-us.html"><span class="icon" style="background:#FEF3C7;">🤝</span> Join us</a>
+          <a href="/faq.html"><span class="icon" style="background:#EBF3FF;">❓</span> FAQ</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
     </div>
     <div class="nav-right">
       <div class="lang-switcher" id="langSwitcher">
@@ -32,69 +43,78 @@ const NAV_HTML = `
         </button>
         <div class="lang-dropdown" id="langDropdown">
           <div class="lang-option" onclick="setLang('en')"><span class="flag">🇬🇧</span> English <span class="check" id="check-en">✓</span></div>
-          <div class="lang-option" onclick="setLang('fi')"><span class="flag">🇫🇮</span> Suomi <span class="check" id="check-fi" style="display:none">✓</span></div>
+          <div class="lang-option" onclick="setLang('fi')"><span class="flag">🇫🇮</span> Suomi ( Finnish ) <span class="check" id="check-fi" style="display:none">✓</span></div>
           <div class="lang-option" onclick="setLang('ru')"><span class="flag">🇷🇺</span> Русский <span class="check" id="check-ru" style="display:none">✓</span></div>
           <div class="lang-option" onclick="setLang('uk')"><span class="flag">🇺🇦</span> Українська <span class="check" id="check-uk" style="display:none">✓</span></div>
         </div>
       </div>
-      <a href="https://booking.homora.fi/book/homora" class="nav-cta" data-i18n="nav.book">Book Now →</a>
+      <a href="https://booking.homora.fi/book/homora" class="nav-cta">Book service</a>
       <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
     </div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/" data-i18n="nav.home">Home</a>
-  <a href="/services/home-cleaning.html" data-i18n="nav.svc.home">Home Cleaning</a>
-  <a href="/services/laundry.html" data-i18n="nav.svc.laundry">Laundry</a>
-  <a href="/services/carpet-cleaning.html" data-i18n="nav.svc.carpet">Carpet Cleaning</a>
-  <a href="/services/tailoring.html" data-i18n="nav.svc.tailoring">Tailoring</a>
-  <a href="/services/handyman.html" data-i18n="nav.svc.handyman">Handyman</a>
-  <a href="/pricing.html" data-i18n="nav.pricing">Pricing</a>
-  <a href="/about.html" data-i18n="nav.about">About</a>
-  <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
-  <a href="/join-us.html" data-i18n="nav.join">Join Us</a>
+  <a href="/">Home</a>
+  <a href="/services/home-cleaning.html">Home Cleaning</a>
+  <a href="/services/laundry-ironing.html">Laundry & Ironing</a>
+  <a href="/services/carpet-cleaning.html">Carpet cleaning</a>
+  <a href="/services/sewing-tailoring.html">Sewing & tailor</a>
+  <a href="/services/moving-service.html">Moving Service</a>
+  <a href="/services/handyman.html">Handyman</a>
+  <a href="/services/move-out-cleaning-services.html">Move Out Cleaning</a>
+  <a href="/services/window-washing-for-businesses.html">Window Washing for Businesses</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="/gift-cards.html">Gift card</a>
+  <a href="/who-we-are.html">Our story</a>
+  <a href="/join-us.html">Join us</a>
+  <a href="/faq.html">FAQ</a>
+  <a href="/blog/">Blog</a>
+  <a href="/join-us.html" class="nav-cta" style="display:inline-flex;margin-top:12px;">Join as a provider</a>
 </div>
 `
 
 const FOOTER_HTML = `
 <footer>
   <div class="footer-inner">
-    <div class="footer-grid">
+    <div class="footer-grid" style="grid-template-columns:1.6fr 1fr 1fr 1fr;">
       <div class="footer-brand">
         <img src="/images/logo-full.png" alt="Homora" />
-        <p data-i18n="footer.tagline">Premium home services in the Helsinki metropolitan area.</p>
-        <address>
-          <span data-i18n="footer.address">Mäntytie 21, 00270 Helsinki, Finland</span><br>
-          <a href="tel:+358417169807" style="color:rgba(255,255,255,0.7);text-decoration:none">+358 41 716 9807</a><br>
-          <span data-i18n="footer.hours">Mon–Fri 10:00–18:00 · Sat 10:00–16:00 · Sun Closed</span>
+        <p style="font-size:13px;color:rgba(255,255,255,0.85);margin-bottom:14px;"><strong>Homora is under NEOM & Partner Capital Group.</strong></p>
+        <p>Homora provides reliable, eco-conscious home services from laundry and tailoring to cleaning and seasonal tasks designed to make everyday living easier and hassle-free.</p>
+        <address style="margin-top:18px;">
+          <div style="margin-bottom:6px;">📍 Address: Mäntytie 21, 00270 Helsinki, Finland</div>
+          <div style="margin-bottom:6px;">📞 Phone: <a href="tel:+358417169807" style="color:rgba(255,255,255,0.7);text-decoration:none;">+358 41 716 9807</a></div>
+          <div style="margin-bottom:6px;">🕒 Hours: Mon–Fri 10:00–18:00 | Sat 10:00–16:00 | Sun Closed</div>
+          <div>📍 Service Area: Helsinki • Espoo • Vantaa • Kauniainen</div>
         </address>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title" data-i18n="footer.services">Services</div>
-        <a href="/services/home-cleaning.html" data-i18n="svc.cleaning.title">Home Cleaning</a>
-        <a href="/services/laundry.html" data-i18n="svc.laundry.title">Laundry & Ironing</a>
-        <a href="/services/carpet-cleaning.html" data-i18n="svc.carpet.title">Carpet Cleaning</a>
-        <a href="/services/tailoring.html" data-i18n="svc.tailoring.title">Sewing & Tailoring</a>
-        <a href="/services/handyman.html" data-i18n="svc.handyman.title">Handyman</a>
+        <div class="footer-col-title">Services</div>
+        <a href="/services/home-cleaning.html">Home Cleaning</a>
+        <a href="/services/laundry-ironing.html">Laundry & Ironing</a>
+        <a href="/services/carpet-cleaning.html">Carpet Cleaning</a>
+        <a href="/services/sewing-tailoring.html">Sewing & Tailoring</a>
+        <a href="/services/handyman.html">Handyman Services</a>
+        <a href="/services/moving-service.html">Moving Services</a>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title" data-i18n="footer.company">Company</div>
-        <a href="/about.html" data-i18n="footer.about">About Us</a>
-        <a href="/join-us.html" data-i18n="footer.join">Join Us</a>
-        <a href="/faq.html" data-i18n="footer.faq">FAQ</a>
-        <a href="/pricing.html" data-i18n="footer.pricing">Pricing</a>
+        <div class="footer-col-title">General</div>
+        <a href="/services/window-washing-for-businesses.html">Corporate services</a>
+        <a href="/join-us.html">Join us as a provider</a>
+        <a href="/gift-cards.html">Gift Card</a>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title" data-i18n="footer.booknow">Book Now</div>
-        <a href="https://booking.homora.fi/book/homora" data-i18n="footer.online">Online Booking</a>
-        <a href="https://wa.me/358417169807">WhatsApp</a>
-        <a href="mailto:info@homora.fi">info@homora.fi</a>
-        <a href="tel:+358417169807">+358 41 716 9807</a>
+        <div class="footer-col-title">About us</div>
+        <a href="/who-we-are.html">Our story</a>
+        <a href="/blog/" style="margin-top:6px;">Blog</a>
+        <a href="/faq.html">FAQ</a>
+        <div class="footer-col-title" style="margin-top:24px;">Follow us on social media</div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span data-i18n="footer.copy">© 2025 Homora Service Oy. Part of NEOM & Partner Capital Group.</span>
-      <span>Helsinki · Espoo · Vantaa · Kauniainen</span>
+      <span>© 2025 Homora. All rights reserved.</span>
+      <span>Chat on WhatsApp available</span>
     </div>
   </div>
 </footer>
