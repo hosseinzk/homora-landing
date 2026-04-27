@@ -11,15 +11,15 @@ const NAV_HTML = `
       <a href="/">Home</a>
       <div class="nav-dropdown">
         <button class="nav-dropdown-trigger">Services <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
-        <div class="nav-dropdown-menu" style="min-width:320px;">
-          <a href="/services/home-cleaning.html"><span class="icon" style="background:#E8F5ED;">🏠</span> Home Cleaning</a>
-          <a href="/services/laundry-ironing.html"><span class="icon" style="background:#EBF3FF;">👕</span> Laundry & Ironing</a>
-          <a href="/services/carpet-cleaning.html"><span class="icon" style="background:#FEF3C7;">🧹</span> Carpet cleaning</a>
-          <a href="/services/sewing-tailoring.html"><span class="icon" style="background:#FDE8F3;">🧵</span> Sewing & tailor</a>
-          <a href="/services/moving-service.html"><span class="icon" style="background:#EEF2FF;">📦</span> Moving Service</a>
-          <a href="/services/handyman.html"><span class="icon" style="background:#F0F9FF;">🔧</span> Handyman</a>
-          <a href="/services/move-out-cleaning-services.html"><span class="icon" style="background:#E8F5ED;">🏃</span> Move Out Cleaning</a>
-          <a href="/services/window-washing-for-businesses.html"><span class="icon" style="background:#EBF3FF;">🪟</span> Window Washing for Businesses</a>
+        <div class="nav-dropdown-menu" style="min-width:340px;">
+          <a href="/services/home-cleaning.html"><span class="icon" style="background-image:url(/images/thumbs/home-cleaning.webp);"></span> Home Cleaning</a>
+          <a href="/services/laundry-ironing.html"><span class="icon" style="background-image:url(/images/thumbs/laundry.jpg);"></span> Laundry & Ironing</a>
+          <a href="/services/carpet-cleaning.html"><span class="icon" style="background-image:url(/images/thumbs/carpet.jpg);"></span> Carpet cleaning</a>
+          <a href="/services/sewing-tailoring.html"><span class="icon" style="background-image:url(/images/thumbs/tailoring.jpg);"></span> Sewing & tailor</a>
+          <a href="/services/moving-service.html"><span class="icon" style="background-image:url(/images/thumbs/moving.jpg);"></span> Moving Service</a>
+          <a href="/services/handyman.html"><span class="icon" style="background-image:url(/images/thumbs/handyman.jpg);"></span> Handyman</a>
+          <a href="/services/move-out-cleaning-services.html"><span class="icon" style="background-image:url(/images/thumbs/move-out.webp);"></span> Move Out Cleaning</a>
+          <a href="/services/window-washing-for-businesses.html"><span class="icon" style="background-image:url(/images/thumbs/window.webp);"></span> Window Washing for Businesses</a>
         </div>
       </div>
       <a href="/pricing.html">Pricing</a>
