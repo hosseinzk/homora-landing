@@ -19,12 +19,12 @@ function renderQuoteForm(opts = {}) {
     <div style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">${sub}</div>
     <form id="${id}" onsubmit="submitQuote(event,this)" style="display:flex;flex-direction:column;gap:10px;">
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <input type="tel" name="phone" required placeholder="Phone number" style="flex:1;min-width:140px;padding:13px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'"/>
-        <input type="text" name="zip" required placeholder="Postal code" maxlength="6" style="width:130px;padding:13px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'"/>
+        <input type="tel" name="phone" required placeholder="Phone number" style="flex:1;min-width:140px;padding:13px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--brand)'" onblur="this.style.borderColor='var(--border)'"/>
+        <input type="text" name="zip" required placeholder="Postal code" maxlength="6" style="width:130px;padding:13px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--brand)'" onblur="this.style.borderColor='var(--border)'"/>
       </div>
       <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:13px 24px;">Get a free quote →</button>
       <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;font-size:12px;color:var(--text-muted);">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--green)"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--brand)"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
         No obligation · We respond fast · Free estimate
       </div>
     </form>
@@ -128,11 +128,11 @@ function renderCalc(type) {
         <!-- Type selection -->
         <div class="calc-type-grid" style="display:grid;grid-template-columns:repeat(${cfg.options.length},1fr);gap:12px;margin-bottom:28px;">
           ${cfg.options.map((o,i) => `
-            <button type="button" data-rate="${o.rate}" data-flat="${o.flat?1:0}" data-label="${o.label}" onclick="selectCalcType('${id}',this)" class="calc-type-btn ${i===0?'active':''}" style="text-align:left;padding:16px;border:2px solid ${i===0?'var(--green)':'var(--border)'};border-radius:14px;background:${i===0?'var(--green-pale)':'#fff'};cursor:pointer;font-family:inherit;transition:all 0.2s;">
+            <button type="button" data-rate="${o.rate}" data-flat="${o.flat?1:0}" data-label="${o.label}" onclick="selectCalcType('${id}',this)" class="calc-type-btn ${i===0?'active':''}" style="text-align:left;padding:16px;border:2px solid ${i===0?'var(--brand)':'var(--border)'};border-radius:14px;background:${i===0?'var(--brand-pale)':'#fff'};cursor:pointer;font-family:inherit;transition:all 0.2s;">
               <div style="font-size:22px;margin-bottom:4px;">${o.dot}</div>
               <div style="font-size:14px;font-weight:700;color:var(--text);">${o.label}</div>
               <div style="font-size:12px;color:var(--text-muted);margin:4px 0 8px;line-height:1.4;">${o.desc}</div>
-              <div style="font-size:16px;font-weight:800;color:var(--green);">€${o.rate}${cfg.unit?` / ${cfg.unit}`:''}</div>
+              <div style="font-size:16px;font-weight:800;color:var(--brand);">€${o.rate}${cfg.unit?` / ${cfg.unit}`:''}</div>
             </button>
           `).join('')}
         </div>
@@ -145,7 +145,7 @@ function renderCalc(type) {
             </div>
             <div style="font-size:13px;color:var(--text-muted);padding-bottom:14px;">Adjust ↓</div>
           </div>
-          <input id="${id}_slider" type="range" min="0" max="${cfg.maxSize}" step="0.5" value="${cfg.defaultSize}" oninput="document.getElementById('${id}_size').value=this.value;calcUpdate('${id}',${cfg.maxSize})" style="width:100%;accent-color:var(--green);height:6px;cursor:pointer;margin-bottom:8px;"/>
+          <input id="${id}_slider" type="range" min="0" max="${cfg.maxSize}" step="0.5" value="${cfg.defaultSize}" oninput="document.getElementById('${id}_size').value=this.value;calcUpdate('${id}',${cfg.maxSize})" style="width:100%;accent-color:var(--brand);height:6px;cursor:pointer;margin-bottom:8px;"/>
           <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted);margin-bottom:24px;">
             <span>0 ${cfg.unit}</span><span>${Math.round(cfg.maxSize/2)} ${cfg.unit}</span><span>${cfg.maxSize} ${cfg.unit}</span>
           </div>
@@ -153,7 +153,7 @@ function renderCalc(type) {
 
         <div style="text-align:center;padding:32px 24px;background:linear-gradient(135deg,#EBF3FF,#F0F7FF);border-radius:16px;">
           <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;">Estimated price</div>
-          <div id="${id}_price" style="font-size:clamp(2.8rem,6vw,4.5rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--green),var(--green-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">€${(cfg.options[0].rate * (cfg.flat?1:cfg.defaultSize)).toFixed(2)}</div>
+          <div id="${id}_price" style="font-size:clamp(2.8rem,6vw,4.5rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--brand),var(--brand-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">€${(cfg.options[0].rate * (cfg.flat?1:cfg.defaultSize)).toFixed(2)}</div>
           <div id="${id}_detail" style="font-size:13px;color:var(--text-muted);margin-top:8px;">${cfg.flat?cfg.options[0].label:`${cfg.defaultSize} ${cfg.unit} × €${cfg.options[0].rate.toFixed(2)}/${cfg.unit}`}</div>
         </div>
 
@@ -176,8 +176,8 @@ function selectCalcType(id, btn) {
     b.style.background = '#fff'
   })
   btn.classList.add('active')
-  btn.style.borderColor = 'var(--green)'
-  btn.style.background = 'var(--green-pale)'
+  btn.style.borderColor = 'var(--brand)'
+  btn.style.background = 'var(--brand-pale)'
 
   // Recalculate
   const rate = parseFloat(btn.getAttribute('data-rate'))

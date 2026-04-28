@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css?v=1777360049" />
 </head>
 <body>
 
@@ -34,17 +34,32 @@
         <a href="https://booking.homora.fi/book/homora" class="btn-primary">Book service</a>
         <a href="tel:+358417169807" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg> +358 41 716 9807</a>
       </div>
+
+      <!-- Inline quote form pill — sits under buttons -->
+      <div style="margin-top:24px;max-width:520px;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);margin-bottom:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--blue)"><path d="M12,17L6,11L7.41,9.59L11,13.17V5H13V13.17L16.59,9.59L18,11L12,17Z"/></svg>
+          <strong style="color:var(--text);">Or get a quote in 30 seconds</strong> — leave your phone & postal code, we'll call you back
+        </div>
+        <form onsubmit="event.preventDefault(); var p=this.phone.value.trim(),z=this.zip.value.trim();var u=new URL('https://booking.homora.fi/book/homora');u.searchParams.set('phone',p);u.searchParams.set('zip',z);window.location.href=u.toString();" style="display:flex;gap:8px;background:#fff;padding:6px;border:1.5px solid var(--border);border-radius:50px;box-shadow:0 4px 16px rgba(20,112,247,0.08);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border)'">
+          <input name="phone" type="tel" required placeholder="Phone number" style="flex:1;min-width:0;padding:10px 16px;border:none;outline:none;font-size:14px;font-family:inherit;background:transparent;" />
+          <input name="zip" type="text" required maxlength="6" placeholder="Postal code" style="width:110px;padding:10px 12px;border:none;border-left:1px solid var(--border);outline:none;font-size:14px;font-family:inherit;background:transparent;" />
+          <button type="submit" style="background:var(--blue);color:#fff;border:none;border-radius:50px;padding:10px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background 0.2s;" onmouseover="this.style.background='var(--brand-dark)'" onmouseout="this.style.background='var(--blue)'">Get quote →</button>
+        </form>
+      </div>
     </div>
     <div class="hero-visual">
-      <div data-quote-form data-quote-title="Quick quote — fast response" data-quote-sub="Phone &amp; postal code only. We&apos;ll call you back."></div>
-      <div class="hero-float-card card-tax" style="bottom:-30px;left:-20px;">
+      <div class="hero-img-wrap">
+        <img src="/images/hero-cleaning.jpg" alt="Homora service in action" />
+      </div>
+      <div class="hero-float-card card-tax" style="bottom:-20px;left:-30px;">
         <div class="hero-float-card-icon" style="background:#FEF3C7;">💰</div>
         <div>
           <div style="font-size:16px;font-weight:800;color:#92400E;">35% Back</div>
           <div style="font-size:12px;color:#B45309;">Household deduction</div>
         </div>
       </div>
-      <div class="hero-float-card card-rating" style="top:-20px;right:-30px;">
+      <div class="hero-float-card card-rating" style="top:-16px;right:-20px;">
         <div class="hero-float-card-icon" style="background:#EBF3FF;">⭐</div>
         <div>
           <div style="font-size:15px;font-weight:800;">95% satisfaction</div>
@@ -194,31 +209,31 @@
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
       <div class="animate-in" style="animation-delay:.05s;text-align:center;padding:24px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);">
         <div class="service-card-icon" style="margin:0 auto 14px;">👕</div>
-        <div style="font-size:30px;font-weight:900;color:var(--green);line-height:1;"><span data-count="80">0</span>+</div>
+        <div style="font-size:30px;font-weight:900;color:var(--brand);line-height:1;"><span data-count="80">0</span>+</div>
         <div style="font-size:12px;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;">Laundry & Ironing Orders</div>
         <p style="font-size:13px;color:var(--text);margin-top:6px;line-height:1.5;">fresh laundry jobs delivered</p>
       </div>
       <div class="animate-in" style="animation-delay:.1s;text-align:center;padding:24px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);">
         <div class="service-card-icon" style="margin:0 auto 14px;background:var(--amber-pale);color:#92400E;">⭐</div>
-        <div style="font-size:30px;font-weight:900;color:var(--green);line-height:1;"><span data-count="95">0</span>%</div>
+        <div style="font-size:30px;font-weight:900;color:var(--brand);line-height:1;"><span data-count="95">0</span>%</div>
         <div style="font-size:12px;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;">Satisfied Customers</div>
         <p style="font-size:13px;color:var(--text);margin-top:6px;line-height:1.5;">satisfaction across all services</p>
       </div>
       <div class="animate-in" style="animation-delay:.15s;text-align:center;padding:24px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);">
         <div class="service-card-icon" style="margin:0 auto 14px;background:var(--blue-pale);color:var(--blue);">🏠</div>
-        <div style="font-size:30px;font-weight:900;color:var(--green);line-height:1;"><span data-count="120">0</span>+</div>
+        <div style="font-size:30px;font-weight:900;color:var(--brand);line-height:1;"><span data-count="120">0</span>+</div>
         <div style="font-size:12px;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;">Completed Cleanings</div>
         <p style="font-size:13px;color:var(--text);margin-top:6px;line-height:1.5;">homes cleaned to perfection</p>
       </div>
       <div class="animate-in" style="animation-delay:.2s;text-align:center;padding:24px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);">
         <div class="service-card-icon" style="margin:0 auto 14px;background:var(--rose-pale);color:var(--rose);">🧵</div>
-        <div style="font-size:30px;font-weight:900;color:var(--green);line-height:1;"><span data-count="50">0</span>+</div>
+        <div style="font-size:30px;font-weight:900;color:var(--brand);line-height:1;"><span data-count="50">0</span>+</div>
         <div style="font-size:12px;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;">Tailoring & Repairs Delivered</div>
         <p style="font-size:13px;color:var(--text);margin-top:6px;line-height:1.5;">clothing fixes and adjustments</p>
       </div>
       <div class="animate-in" style="animation-delay:.25s;text-align:center;padding:24px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);">
         <div class="service-card-icon" style="margin:0 auto 14px;">🚚</div>
-        <div style="font-size:30px;font-weight:900;color:var(--green);line-height:1;"><span data-count="98">0</span>%</div>
+        <div style="font-size:30px;font-weight:900;color:var(--brand);line-height:1;"><span data-count="98">0</span>%</div>
         <div style="font-size:12px;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.04em;font-weight:700;">On-Time Delivery Rate</div>
         <p style="font-size:13px;color:var(--text);margin-top:6px;line-height:1.5;">of pickups and deliveries on schedule</p>
       </div>
@@ -410,7 +425,7 @@
       <a href="#" class="btn-outline">View all article →</a>
     </div>
     <a href="#" class="animate-in" style="display:grid;grid-template-columns:1fr 1.3fr;gap:0;text-decoration:none;color:inherit;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:#fff;transition:all 0.3s ease;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
-      <img src="/images/saving-money.png" alt="Household deduction" style="width:100%;height:100%;object-fit:cover;background:var(--green-pale);min-height:300px;"/>
+      <img src="/images/saving-money.png" alt="Household deduction" style="width:100%;height:100%;object-fit:cover;background:var(--brand-pale);min-height:300px;"/>
       <div style="padding:40px;">
         <div style="display:flex;gap:16px;font-size:13px;color:var(--text-muted);margin-bottom:16px;">
           <span>📖 5 Minutes to read</span>
@@ -419,7 +434,7 @@
         </div>
         <h3 style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;line-height:1.3;margin-bottom:14px;color:var(--text);">How to Get 35% Back on Home Cleaning Costs in Finland (Household Deduction)</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;">When you book a home cleaning service in Finland, you may be eligible for a substantial tax deduction. Here's exactly how to claim it, what qualifies, and how much you can save...</p>
-        <span style="display:inline-flex;align-items:center;gap:4px;margin-top:20px;font-size:14px;font-weight:600;color:var(--green);">Read article →</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;margin-top:20px;font-size:14px;font-weight:600;color:var(--brand);">Read article →</span>
       </div>
     </a>
   </div>
@@ -447,10 +462,10 @@
 
 <div id="footer"></div>
 
-<script src="/js/i18n.js"></script>
-<script src="/partials.js"></script>
-<script src="/js/reviews.js"></script>
-<script src="/js/widgets.js"></script>
-<script src="/js/app.js"></script>
+<script src="/js/i18n.js?v=1777360049"></script>
+<script src="/partials.js?v=1777360049"></script>
+<script src="/js/reviews.js?v=1777360049"></script>
+<script src="/js/widgets.js?v=1777360049"></script>
+<script src="/js/app.js?v=1777360049"></script>
 </body>
 </html>
