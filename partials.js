@@ -27,7 +27,7 @@ const NAV_HTML = `
       <div class="nav-dropdown">
         <button class="nav-dropdown-trigger">About us <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
         <div class="nav-dropdown-menu">
-          <a href="/who-we-are.html"><span class="icon" style="background:#E8F5ED;">📖</span> Our story</a>
+          <a href="/who-we-are.html"><span class="icon" style="background:#EBF3FF;">📖</span> Our story</a>
           <a href="/join-us.html"><span class="icon" style="background:#FEF3C7;">🤝</span> Join us</a>
           <a href="/faq.html"><span class="icon" style="background:#EBF3FF;">❓</span> FAQ</a>
         </div>
