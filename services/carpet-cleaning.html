@@ -30,7 +30,8 @@
       </div>
       <p style="margin-top:24px; font-size:14px; color:var(--text-muted);" data-i18n="carp.avail">Same-week availability in Helsinki, Espoo & Vantaa</p>
     </div>
-    <div class="hero-visual"><div class="hero-img-wrap"><img src="/images/service-carpet.jpg" alt="Carpet Cleaning" /></div></div>
+    <div class="hero-visual" style="display:flex;flex-direction:column;gap:20px;"><div class="hero-img-wrap"><img src="/images/service-carpet.jpg" alt="Carpet Cleaning" /></div></div>
+      <div data-quote-form data-quote-compact data-quote-title="Quick quote — fast response" data-quote-sub="Phone & postal code only. We'll call you back."></div>
   </div>
 </section>
 
@@ -95,77 +96,7 @@
   </div>
 </section>
 
-<!-- PRICE CALCULATOR -->
-<section id="calculator" style="background:linear-gradient(135deg,#F0FDF4 0%,#EBF3FF 100%);">
-  <div class="section-inner">
-    <div class="section-header animate-in">
-      <span class="section-tag">Instant quote</span>
-      <h2 class="section-title">Get an instant <em>carpet cleaning price</em></h2>
-      <p class="section-sub">Enter your rug size and see your estimated price in seconds. No commitment.</p>
-    </div>
-
-    <div class="animate-in" style="max-width:760px;margin:0 auto;background:#fff;border-radius:24px;padding:40px;box-shadow:0 8px 40px rgba(0,0,0,0.06);">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;">
-        <div>
-          <label for="rugType" style="display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;">Carpet type</label>
-          <select id="rugType" onchange="calcCarpet()" style="width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:12px;font-size:15px;font-family:inherit;background:#fff;cursor:pointer;">
-            <option value="12.90">Cotton rug, machine washable — €12.90/m²</option>
-            <option value="12.90">Plastic rug — €12.90/m²</option>
-            <option value="15.90" selected>Hallway rug, rubber bottom — €15.90/m²</option>
-            <option value="15.90">Cotton carpet, flat wash — €15.90/m²</option>
-            <option value="15.90">Karvalanka / Doll carpet — €15.90/m²</option>
-            <option value="15.90">Buklee / synthetic fibre carpet — €15.90/m²</option>
-            <option value="16.90">Sisal / paper carpet — €16.90/m²</option>
-            <option value="16.90">Wool carpet (thin) — €16.90/m²</option>
-            <option value="16.90">Viscose carpet (thin/woven) — €16.90/m²</option>
-            <option value="25.90">Viscose carpet (thick) — €25.90/m²</option>
-            <option value="25.90">Authentic / Willow / Tufted carpet — €25.90/m²</option>
-            <option value="25.90">Rye rug — €25.90/m²</option>
-            <option value="30.90">Silk carpet — €30.90/m²</option>
-            <option value="34.90">Taljat — €34.90/m²</option>
-          </select>
-        </div>
-        <div>
-          <label for="rugSize" style="display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;">Rug size (m²)</label>
-          <input id="rugSize" type="number" min="0" step="0.1" value="6" oninput="calcCarpet()" style="width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:12px;font-size:15px;font-family:inherit;"/>
-        </div>
-      </div>
-
-      <div style="margin:32px 0 28px;">
-        <input id="rugSlider" type="range" min="0" max="50" step="0.5" value="6" oninput="document.getElementById('rugSize').value=this.value;calcCarpet()" style="width:100%;accent-color:var(--green);height:6px;cursor:pointer;"/>
-        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);margin-top:6px;">
-          <span>0 m²</span><span>10 m²</span><span>25 m²</span><span>50 m²</span>
-        </div>
-      </div>
-
-      <div style="text-align:center;padding:28px;background:linear-gradient(135deg,#F0FDF4,#EBF3FF);border-radius:16px;">
-        <div style="font-size:13px;color:var(--text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;">Estimated carpet cleaning price</div>
-        <div id="carpetPrice" style="font-size:clamp(3rem,6vw,4.5rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--green),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">€95.40</div>
-        <div style="font-size:13px;color:var(--text-muted);margin-top:8px;" id="carpetCalcDetail">6 m² × €15.90/m²</div>
-      </div>
-
-      <div style="display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap;">
-        <a href="https://booking.homora.fi/book/homora" class="btn-primary">Book now →</a>
-        <a href="https://wa.me/358417169807" class="btn-outline">Get a custom quote</a>
-      </div>
-
-      <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:18px;">Final price may vary based on carpet condition. Free pickup available in Helsinki, Espoo & Vantaa.</p>
-    </div>
-  </div>
-</section>
-
-<script>
-function calcCarpet() {
-  const type = document.getElementById('rugType');
-  const size = parseFloat(document.getElementById('rugSize').value) || 0;
-  const slider = document.getElementById('rugSlider');
-  const rate = parseFloat(type.value);
-  const total = (size * rate).toFixed(2);
-  document.getElementById('carpetPrice').textContent = '€' + total;
-  document.getElementById('carpetCalcDetail').textContent = size + ' m² × €' + rate.toFixed(2) + '/m²';
-  if (slider && Math.abs(parseFloat(slider.value) - size) > 0.05) slider.value = Math.min(50, size);
-}
-</script>
+<div data-calc="carpet"></div>
 
 <!-- PRICING TABLE -->
 <section id="pricing" style="background:var(--bg-gray-2);">
@@ -240,6 +171,7 @@ function calcCarpet() {
 <script src="/js/i18n.js"></script>
 <script src="/partials.js"></script>
 <script src="/js/reviews.js"></script>
+<script src="/js/widgets.js"></script>
 <script src="/js/app.js"></script>
 </body>
 </html>
